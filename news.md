@@ -40,4 +40,4 @@
 
 <hr/>
 
-© 2016, 2018 [Alan WF](https://alanwf.org/)
+© 2016, 2018, 2022 [Alan WF](https://alanwf.org/)

@@ -8,7 +8,7 @@ _2018 April 4_
 
 * [Introduction](#introduction)
 * [Before Shooting: Installing the App](#installing)
-* [Before Shooting: Registering Lenses and Adapters](#registering)
+* [Before Shooting: Adding Lenses and Adapters](#adding)
 * [Before Shooting: Synchronizing Clocks](#sychronizing)
 * [While Shooting](#while)
 * [After Shooting](#after)
@@ -18,7 +18,7 @@ _2018 April 4_
 
 <hr/>
 
-Copyright © 2016, 2018 [Alan WF](https://alanwf.org/)
+Copyright © 2016, 2018, 2022 [Alan WF](https://alanwf.org/)
 
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
@@ -79,34 +79,34 @@ To install the app, open [the app web page](app.html) in
 
 and follow the instructions.
 
-After installing and opening the app, you'll be encouraged to [register](#registering) some lenses and adapters and to [synchronize](#synchronizing) the clock on your camera. These processes are described in detail below.
+After installing and opening the app, you'll be encouraged to [add](#adding) some lenses and adapters and to [synchronize](#synchronizing) the clock on your camera. These processes are described in detail below.
 
 <hr/>
 
-<a name="registering"></a>
+<a name="adding"></a>
 
-## Before Shooting: Registering Lenses and Adapters
+## Before Shooting: Adding Lenses and Adapters
 
-Lens Slate doesn't know what lenses and adapters you have, so you'll have to manually register them. This is admittedly a bit of a drag, but since Lens Slate remembers this information, you only have to do it once for each lens or adapter.
+Lens Slate doesn't know what lenses and adapters you have, so you'll have to manually add them. This is admittedly a bit of a drag, but since Lens Slate remembers this information, you only have to do it once for each lens or adapter.
 
 Start by tapping "More" on the main screen to bring up the "More" screen:
 
   <a href="images/more-screen.png"><img class="center" src="images/more-screen.png"/></a>
 
-Then tap "Register Lens" to register a lens or "Register Adapter" to register an adapter.
+Then tap "Add Lens" to add a lens or "Add Adapter" to add an adapter.
 
-You can later change the registered information of a lens or adapter using "Edit Lens" or "Edit Adapter" and delete a lens or adapter using "Delete Lens" or "Delete Adapter".
+You can later change the added information of a lens or adapter using "Edit Lens" or "Edit Adapter" and delete a lens or adapter using "Delete Lens" or "Delete Adapter".
 
-You can register multiple lenses and adapters.
+You can add multiple lenses and adapters.
 
-Once you're finished registering lenses and adapters, tap "Done".
+Once you're finished adding lenses and adapters, tap "Done".
 
-<a name="registering-lenses"></a>
-### Registering Lenses
+<a name="adding-lenses"></a>
+### Adding Lenses
 
-To register a lens, tap "More" on the main screen and then "Register Lens". You will be presented with a screen like this one:
+To add a lens, tap "More" on the main screen and then "Add Lens". You will be presented with a screen like this one:
 
-  <a href="images/register-lens-screen.png"><img class="center" src="images/register-lens-screen.png"/></a>
+  <a href="images/add-lens-screen.png"><img class="center" src="images/add-lens-screen.png"/></a>
 
 For each lens, you can specify the model name, minimum and maximum focal
 length, minimum and maximum focal ratio (ƒ-number), whether the focal ratio changes by whole, half, or third stops, and whether the lens is native or adapted.
@@ -121,40 +121,40 @@ Some notes:
 
 For example, here is a screen for a [Canon New FD50mm ƒ/1.4 ](http://global.canon/en/c-museum/product/nfd209.html) prime lens:
 
-  <a href="images/register-lens-screen-example-canon-new-fd50mm.png"><img class="center" src="images/register-lens-screen-example-canon-new-fd50mm.png"/></a>
+  <a href="images/add-lens-screen-example-canon-new-fd50mm.png"><img class="center" src="images/add-lens-screen-example-canon-new-fd50mm.png"/></a>
   
 Here is a screen for a [Canon New FD35-105mm ƒ/3.5-4.5](http://global.canon/en/c-museum/product/nfd246.html) zoom lens:
 
-  <a href="images/add-lens-screen-example-canon-new-fd35-105mm.png"><img class="center" src="images/register-lens-screen-example-canon-new-fd35-105mm.png"/></a>
+  <a href="images/add-lens-screen-example-canon-new-fd35-105mm.png"><img class="center" src="images/add-lens-screen-example-canon-new-fd35-105mm.png"/></a>
 
 Finally, here is a screen for a [Voightländer Nokton 42.5mm ƒ/0.95](https://voigtlaender.com/42%2c5-mm--f-0%2c95-nokton.html) prime lens:
 
-  <a href="images/register-lens-screen-example-voightlaender-42.5mm.png"><img class="center" src="images/register-lens-screen-example-voightlaender-42.5mm.png"/></a>
+  <a href="images/add-lens-screen-example-voightlaender-42.5mm.png"><img class="center" src="images/add-lens-screen-example-voightlaender-42.5mm.png"/></a>
 
-Once you've entered the information, tap "Save". If you want to abandon registering this new lens, tap "Cancel".
+Once you've entered the information, tap "Save". If you want to abandon adding this new lens, tap "Cancel".
 
-You can register multiple lenses.
+You can add multiple lenses.
 
 If you later notice a mistake, you can [edit](#editing) or [delete](#deleting) a lens.
 
-<a name="registering-adapters"></a>
-### Registering Adapters
+<a name="adding-adapters"></a>
+### Adding Adapters
 
 Mirrorless cameras with short [flange focal distances](https://en.wikipedia.org/wiki/Flange_focal_distance) make it relatively easy to [adapt  lenses](https://www.dpreview.com/articles/4950002482/new-dpr-forum-adapted-lens-talk) from other mounts. Adapters include simple mechanical adapters, electronic adapters giving aperture control and auto-focus, and optical focal reducers. Lens Slate helps you keep track of the adapter used with a particular lens.
 
-To register an adapter, tap "More" on the main screen and then "Register Adapter". You will be presented with a screen like this one:
+To add an adapter, tap "More" on the main screen and then "Add Adapter". You will be presented with a screen like this one:
 
-  <a href="images/register-adapter-screen.png"><img class="center" src="images/register-adapter-screen.png"/></a>
+  <a href="images/add-adapter-screen.png"><img class="center" src="images/add-adapter-screen.png"/></a>
 
 For each adapter, you can specify the model name only.
 
 For example, here is a screen for a Fotasy FD-MFT adapter:
 
-  <a href="images/register-adapter-screen-example.png"><img class="center" src="images/register-adapter-screen-example.png"/></a>
+  <a href="images/add-adapter-screen-example.png"><img class="center" src="images/add-adapter-screen-example.png"/></a>
 
-Once you've entered the model name, tap "Save".  If you want to abandon registering this new adapter, tap "Cancel".
+Once you've entered the model name, tap "Save".  If you want to abandon adding this new adapter, tap "Cancel".
 
-You can register multiple adapters.
+You can add multiple adapters.
 
 If you later notice a mistake, you can [edit](#editing) or [delete](#deleting) an adapter.
 
@@ -222,7 +222,7 @@ Some notes:
 
 * Tap the top row of buttons to change between "Previous" and "Next". The intent of these are to show whether you are recording the configuration used for your previous image or the next image.
 
-* Tap the name of the lens to bring up a menu showing all of the registered lenses.
+* Tap the name of the lens to bring up a menu showing all of the added lenses.
 
 * For zoom lenses, tap the focal length to bring up a menu of focal lengths.
 
@@ -230,7 +230,7 @@ Some notes:
 
 * For zoom lenses, there is an additional focal ratio "Fastest". This is useful for variable focal-ratio zooms in which the fastest focal ratio at a given focal length might not match the values in the menu.
 
-* For adapted lenses, tap the adapter model to bring up a menu of all of the registered adapters.
+* For adapted lenses, tap the adapter model to bring up a menu of all of the added adapters.
 
 * Below the adapter model is a text area for additional information. For example, you might use it to record filters or macro extension tubes.
  

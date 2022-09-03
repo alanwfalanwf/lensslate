@@ -2,7 +2,7 @@
 
 <!--
 
-// Copyright © 2016, 2018 Alan WF
+// Copyright © 2016, 2018, 2022 Alan WF
 // 
 // alanwf@alanwf.com
 //
@@ -95,10 +95,10 @@
       <hr/>
       <h2>More</h2>
       <hr/>
-      <div class='line'><button class='one' onclick='morePageRegisterLens()'>Register Lens</button></div>
+      <div class='line'><button class='one' onclick='morePageAddLens()'>Add Lens</button></div>
       <div class='line'><button class='one' onclick='morePageEditLens()'>Edit Lens</button></div>
       <div class='line'><button class='one' onclick='morePageDeleteLens()'>Delete Lens</button></div>
-      <div class='line'><button class='one' onclick='morePageRegisterAdapter()'>Register Adapter</button></div>
+      <div class='line'><button class='one' onclick='morePageAddAdapter()'>Add Adapter</button></div>
       <div class='line'><button class='one' onclick='morePageEditAdapter()'>Edit Adapter</button></div>
       <div class='line'><button class='one' onclick='morePageDeleteAdapter()'>Delete Adapter</button></div>
       <hr/>
@@ -109,56 +109,56 @@
       </div>
     </div>
     
-    <div class='page' id='register-lens-page'>
+    <div class='page' id='add-lens-page'>
       <hr/>
-      <h2>Register Lens</h2>
+      <h2>Add Lens</h2>
       <hr/>
       <div class='line'>
         <span class='label edit left narrow'>Model:</span>
-        <input type='text' class='edit wide right wide' id='register-lens-model'/>
+        <input type='text' class='edit wide right wide' id='add-lens-model'/>
       </div>
       <div class='line'>
         <span class='label edit left wide'>Min Focal Length (mm):</span>
-        <input type='text' class='edit narrow right' id='register-lens-focal-length-min'/>
+        <input type='text' class='edit narrow right' id='add-lens-focal-length-min'/>
       </div>
       <div class='line'>
         <span class='label edit left wide'>Max Focal Length (mm):</span>
-        <input type='text' class='edit narrow right' id='register-lens-focal-length-max'/>
+        <input type='text' class='edit narrow right' id='add-lens-focal-length-max'/>
       </div>
       <div class='line'>
         <span class='label edit left wide'>Min Focal Ratio:</span>
-        <input type='text' class='edit narrow right' id='register-lens-focal-ratio-min'/>
+        <input type='text' class='edit narrow right' id='add-lens-focal-ratio-min'/>
       </div>
       <div class='line'>
         <span class='label edit left wide'>Max Focal Ratio:</span>
-        <input type='text' class='edit narrow right' id='register-lens-focal-ratio-max'/>
+        <input type='text' class='edit narrow right' id='add-lens-focal-ratio-max'/>
       </div>
       <div class='line'>
         <span class='label edit left wide'>Focal Ratio Interval:</span>
-        <input type='radio' name='register-lens-focal-ratio-interval' value='full-stop'/><span class='label edit'>Full Stop</span>
+        <input type='radio' name='add-lens-focal-ratio-interval' value='full-stop'/><span class='label edit'>Full Stop</span>
       </div>
       <div class='line'>
         <span class='label edit left wide'>&nbsp;</span>
-        <input type='radio' name='register-lens-focal-ratio-interval' value='half-stop'/><span class='label edit'>Half Stop</span>
+        <input type='radio' name='add-lens-focal-ratio-interval' value='half-stop'/><span class='label edit'>Half Stop</span>
       </div>
       <div class='line'>
         <span class='label edit left wide'>&nbsp;</span>
-        <input type='radio' name='register-lens-focal-ratio-interval' value='third-stop'/><span class='label edit'>Third Stop</span>
+        <input type='radio' name='add-lens-focal-ratio-interval' value='third-stop'/><span class='label edit'>Third Stop</span>
       </div>
       <div class='line'>
         <span class='left label edit wide'>Native or Adapted Lens:</span>
-        <input type='radio' name='register-lens-adapted' value='native'/><span class='label edit'>Native</span>
+        <input type='radio' name='add-lens-adapted' value='native'/><span class='label edit'>Native</span>
       </div>
       <div class='line'>
         <span class='label edit left wide'>&nbsp;</span>
-        <input type='radio' name='register-lens-adapted' value='adapted'/><span class='label edit'>Adapted</span>
+        <input type='radio' name='add-lens-adapted' value='adapted'/><span class='label edit'>Adapted</span>
       </div>
       <hr/>
       <div class='line'>
-        <button class='four left' onclick='registerLensPageSave()'>Save</button>
-        <button class='four' onclick='registerLensPageCancel()'>Cancel</button>
+        <button class='four left' onclick='addLensPageSave()'>Save</button>
+        <button class='four' onclick='addLensPageCancel()'>Cancel</button>
         <a class='button four' href='help.html'>Help</a>
-        <button class='four right' onclick='registerLensPageAbout()'>About</button>
+        <button class='four right' onclick='addLensPageAbout()'>About</button>
       </div>
     </div>
       
@@ -246,20 +246,20 @@
       </div>
     </div>
 
-    <div class='page' id='register-adapter-page'>
+    <div class='page' id='add-adapter-page'>
       <hr/>
-      <h2>Register Adapter</h2>
+      <h2>Add Adapter</h2>
       <hr/>
       <div class='line'>
         <span class='label edit left narrow'>Model:</span>
-        <input type='text' class='edit wide right wide' id='register-adapter-model'/>
+        <input type='text' class='edit wide right wide' id='add-adapter-model'/>
       </div>
       <hr/>
       <div class='line'>
-        <button class='four left' onclick='registerAdapterPageSave()'>Save</button>
-        <button class='four' onclick='registerAdapterPageCancel()'>Cancel</button>
+        <button class='four left' onclick='addAdapterPageSave()'>Save</button>
+        <button class='four' onclick='addAdapterPageCancel()'>Cancel</button>
         <a class='button four' href='help.html'>Help</a>
-        <button class='four right' onclick='registerAdapterPageAbout()'>About</button>
+        <button class='four right' onclick='addAdapterPageAbout()'>About</button>
       </div>
     </div>
 
@@ -375,7 +375,7 @@
       <h2>Welcome</h2>
       <hr/>
       <p>Welcome to Lens Slate!</p>
-      <p>The first thing you might want to do is register some lenses and adapters by tapping &#8220;More&#8221; below.</p>
+      <p>The first thing you might want to do is add some lenses and adapters by tapping &#8220;More&#8221; below.</p>
       <p>The next thing you might want to do is synchronize the clock on your camera by tapping &#8220;Sync&#8221; below.</p>
       <p>For more information, tap on &#8220;Help&#8221; below.</p>
       <hr/>
@@ -393,7 +393,7 @@
       <hr/>
       <p><a href="index.html">Lens Slate</a> is a free photography app for iOS and Android to help you keep track of the configuration of manual lenses as you shoot.</p>
       <hr/>
-      <p>This is version 4.4 (2018-04-04) of Lens Slate.</p>
+      <p>This is version 4.4 (2022-09-03) of Lens Slate.</p>
       <hr/>
       <p><a href="index.html">Lens Slate</a> was written by <a href="https://alanwf.org">Alan WF</a>.</p>
       <p>Some icons are from <a href="http://icons8.com/">icons8</a> and are used with permission.</p>

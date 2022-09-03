@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-// Copyright © 2016, 2018 Alan WF
+// Copyright © 2016, 2018, 2022 Alan WF
 // 
 // alanwf@alanwf.com
 //
@@ -65,16 +65,16 @@ function openPage(page) {
     syncPageOpen();
   } else if (page === "more") {
     morePageOpen();
-  } else if (page === "registerLens") {
-    registerLensPageOpen();
+  } else if (page === "addLens") {
+    addLensPageOpen();
   } else if (page === "editLensSelect") {
     editLensSelectPageOpen();
   } else if (page === "editLens") {
     editLensPageOpen();
   } else if (page === "deleteLens") {
     deleteLensPageOpen();
-  } else if (page === "registerAdapter") {
-    registerAdapterPageOpen();
+  } else if (page === "addAdapter") {
+    addAdapterPageOpen();
   } else if (page === "editAdapterSelect") {
     editAdapterSelectPageOpen();
   } else if (page === "editAdapter") {
@@ -360,8 +360,8 @@ function morePageOpen() {
   morePageShow();
 }
 
-function morePageRegisterLens() {
-  registerLensPageOpen();
+function morePageAddLens() {
+  addLensPageOpen();
 }
 
 function morePageEditLens() {
@@ -372,8 +372,8 @@ function morePageDeleteLens() {
   deleteLensPageOpen();
 }
 
-function morePageRegisterAdapter() {
-  registerAdapterPageOpen();
+function morePageAddAdapter() {
+  addAdapterPageOpen();
 }
 
 function morePageEditAdapter() {
@@ -394,62 +394,62 @@ function morePageAbout() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// The Register Lens page.
+// The Add Lens page.
 
-function registerLensPageOpen() {
-  setPage("registerLens");
-  registerLensPageUpdate();
-  registerLensPageShow();
+function addLensPageOpen() {
+  setPage("addLens");
+  addLensPageUpdate();
+  addLensPageShow();
 }
 
-function registerLensPageUpdate() {
-  $("#register-lens-model").val("");
-  $("#register-lens-focal-length-min").val("");
-  $("#register-lens-focal-length-max").val("");
-  $("#register-lens-focal-ratio-min").val("");
-  $("#register-lens-focal-ratio-max").val("");
-  $("[name=register-lens-focal-ratio-interval]").filter(function() {
+function addLensPageUpdate() {
+  $("#add-lens-model").val("");
+  $("#add-lens-focal-length-min").val("");
+  $("#add-lens-focal-length-max").val("");
+  $("#add-lens-focal-ratio-min").val("");
+  $("#add-lens-focal-ratio-max").val("");
+  $("[name=add-lens-focal-ratio-interval]").filter(function() {
     return $(this).val() === "full-stop";
   }).prop("checked", true);
-  $("[name=register-lens-adapted]").filter(function() {
+  $("[name=add-lens-adapted]").filter(function() {
     return $(this).val() === "native";
   }).prop("checked", true);
 }
 
-function registerLensPageSave() {
+function addLensPageSave() {
 
-  var model = $("#register-lens-model").val();
-  var minFocalLength = $("#register-lens-focal-length-min").val();
-  var maxFocalLength = $("#register-lens-focal-length-max").val();
-  var minFocalRatio = $("#register-lens-focal-ratio-min").val();
-  var maxFocalRatio = $("#register-lens-focal-ratio-max").val();
-  var focalRatioInterval = $("[name=register-lens-focal-ratio-interval]:checked").val();
-  var adapted = $("[name=register-lens-adapted]:checked").val() === "adapted";
+  var model = $("#add-lens-model").val();
+  var minFocalLength = $("#add-lens-focal-length-min").val();
+  var maxFocalLength = $("#add-lens-focal-length-max").val();
+  var minFocalRatio = $("#add-lens-focal-ratio-min").val();
+  var maxFocalRatio = $("#add-lens-focal-ratio-max").val();
+  var focalRatioInterval = $("[name=add-lens-focal-ratio-interval]:checked").val();
+  var adapted = $("[name=add-lens-adapted]:checked").val() === "adapted";
 
   model = prettifyModel(model);
   if (model === "" || model === "-") {
-    alert("Register Lens: invalid model (" + model + ").");
+    alert("Add Lens: invalid model (" + model + ").");
     return;
   }
 
   try {
     var lens = makeLens(minFocalLength, maxFocalLength, minFocalRatio, maxFocalRatio, focalRatioInterval, adapted);
-    registerLens(model, lens);
+    addLens(model, lens);
     setLensModel(model);
   }
   catch (e) {
-    alert("Register Lens: " + e);
+    alert("Add Lens: " + e);
     return;
   }
 
   morePageOpen();
 }
 
-function registerLensPageCancel() {
+function addLensPageCancel() {
   morePageOpen();
 }
 
-function registerLensPageAbout() {
+function addLensPageAbout() {
   aboutPageOpen();
 }
 
@@ -535,7 +535,7 @@ function editLensPageSave() {
 
   try {
     var lens = makeLens(minFocalLength, maxFocalLength, minFocalRatio, maxFocalRatio, focalRatioInterval, adapted);
-    registerLens(lensModel, lens);
+    addLens(lensModel, lens);
     setLensModel(lensModel);
   }
   catch (e) {
@@ -600,39 +600,39 @@ function deleteLensPageAbout() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// The Register Adapter page.
+// The Add Adapter page.
 
-function registerAdapterPageOpen() {
-  setPage("registerAdapter");
-  registerAdapterPageUpdate();
-  registerAdapterPageShow();
+function addAdapterPageOpen() {
+  setPage("addAdapter");
+  addAdapterPageUpdate();
+  addAdapterPageShow();
 }
 
-function registerAdapterPageUpdate() {
-  $("#register-adapter-model").val("");
+function addAdapterPageUpdate() {
+  $("#add-adapter-model").val("");
 }
 
-function registerAdapterPageSave() {
+function addAdapterPageSave() {
 
-  var model = $("#register-adapter-model").val();
+  var model = $("#add-adapter-model").val();
 
   model = prettifyModel(model);
   if (model === "" || model === "-") {
-    alert("Register Adapter: invalid model (" + model + ").");
+    alert("Add Adapter: invalid model (" + model + ").");
     return;
   }
 
-  registerAdapter(model);
+  addAdapter(model);
   setAdapterModel(model);
 
   morePageOpen();
 }
 
-function registerAdapterPageCancel() {
+function addAdapterPageCancel() {
   morePageOpen();
 }
 
-function registerAdapterPageAbout() {
+function addAdapterPageAbout() {
   aboutPageOpen();
 }
 
@@ -700,7 +700,7 @@ function editAdapterPageSave() {
   }
 
   try {
-    registerAdapter(adapterModel);
+    addAdapter(adapterModel);
     setAdapterModel(adapterModel);
   }
   catch (e) {
@@ -872,9 +872,9 @@ function morePageShow() {
   $("div#more-page").show();
 }
 
-function registerLensPageShow() {
+function addLensPageShow() {
   $("div.page").hide();
-  $("div#register-lens-page").show();
+  $("div#add-lens-page").show();
 }
 
 function editLensSelectPageShow() {
@@ -892,9 +892,9 @@ function deleteLensPageShow() {
   $("div#delete-lens-page").show();
 }
 
-function registerAdapterPageShow() {
+function addAdapterPageShow() {
   $("div.page").hide();
-  $("div#register-adapter-page").show();
+  $("div#add-adapter-page").show();
 }
 
 function editAdapterSelectPageShow() {
@@ -1130,15 +1130,15 @@ function makeLens(minFocalLength, maxFocalLength, minFocalRatio, maxFocalRatio, 
   return lens;
 }
 
-function registerLens(model, lens) {
+function addLens(model, lens) {
   var lenses = getLenses();
   lenses[model] = lens;
   setLenses(lenses);
 }
 
-function registerLensAndConfirm(model, lens) {
-  registerLens(model, lens);
-  alert("Lens Slate: registered " + model + " lens.");
+function addLensAndConfirm(model, lens) {
+  addLens(model, lens);
+  alert("Lens Slate: added " + model + " lens.");
 }
 
 function deleteLens(model) {
@@ -1161,7 +1161,7 @@ function getLens(model) {
 
 // Adapters
 
-function registerAdapter(model) {
+function addAdapter(model) {
   var adapters = getAdapters();
   adapters[model] = true;
   setAdapters(adapters);
@@ -1284,14 +1284,14 @@ function isAndroid() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-//registerAdapter(prettifyModel("Fotasy FD->MFT"));
-//registerAdapter(prettifyModel("Zhongyi Lens Turbo II FD->MFT"));
-//registerAdapter(prettifyModel("Metabones SpeedBoster FD->MFT"));
+//addAdapter(prettifyModel("Fotasy FD->MFT"));
+//addAdapter(prettifyModel("Zhongyi Lens Turbo II FD->MFT"));
+//addAdapter(prettifyModel("Metabones SpeedBoster FD->MFT"));
 
-//registerLens(prettifyModel("Olympus 9mm f/8"), makeLens("9", "9", "8", "8", "full-stop", false));
-//registerLens(prettifyModel("Canon New FD50mm f/1.4"), makeLens("50", "50", "1.4", "22", "half-stop", true));
-//registerLens(prettifyModel("Canon New FD100mm f/2.8"), makeLens("100", "100", "2.8", "32", "half-stop", true));
-//registerLens(prettifyModel("Canon New FD35-105mm f/3.5-4.5"), makeLens("35", "105", "3.5", "22", "half-stop", true));
+//addLens(prettifyModel("Olympus 9mm f/8"), makeLens("9", "9", "8", "8", "full-stop", false));
+//addLens(prettifyModel("Canon New FD50mm f/1.4"), makeLens("50", "50", "1.4", "22", "half-stop", true));
+//addLens(prettifyModel("Canon New FD100mm f/2.8"), makeLens("100", "100", "2.8", "32", "half-stop", true));
+//addLens(prettifyModel("Canon New FD35-105mm f/3.5-4.5"), makeLens("35", "105", "3.5", "22", "half-stop", true));
 
 ////////////////////////////////////////////////////////////////////////////////
 
