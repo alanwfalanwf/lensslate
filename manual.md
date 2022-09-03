@@ -1,6 +1,6 @@
 # Lens Slate: Manual
 
-_2018 April 4_
+_2020 September 3_
 
 [Lens Slate](index.html) is a free photography app for iOS and Android to help you keep track of the configuration of manual lenses as you shoot.
 
@@ -127,9 +127,9 @@ Here is a screen for a [Canon New FD35-105mm ƒ/3.5-4.5](http://global.canon/en/
 
   <a href="images/add-lens-screen-example-canon-new-fd35-105mm.png"><img class="center" src="images/add-lens-screen-example-canon-new-fd35-105mm.png"/></a>
 
-Finally, here is a screen for a [Voightländer Nokton 42.5mm ƒ/0.95](https://voigtlaender.com/42%2c5-mm--f-0%2c95-nokton.html) prime lens:
+Finally, here is a screen for a [Voitländer Nokton 42.5mm ƒ/0.95](https://voigtlaender.com/42%2c5-mm--f-0%2c95-nokton.html) prime lens:
 
-  <a href="images/add-lens-screen-example-voightlaender-42.5mm.png"><img class="center" src="images/add-lens-screen-example-voightlaender-42.5mm.png"/></a>
+  <a href="images/add-lens-screen-example-voigtlaender-42.5mm.png"><img class="center" src="images/add-lens-screen-example-voigtlaender-42.5mm.png"/></a>
 
 Once you've entered the information, tap "Save". If you want to abandon adding this new lens, tap "Cancel".
 
@@ -286,5 +286,5 @@ Thanks to
 
 <hr/>
 
-© 2016, 2018 [Alan WF](https://alanwf.org/)
+© 2016, 2018, 2022 [Alan WF](https://alanwf.org/)
 

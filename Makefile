@@ -17,18 +17,16 @@ MANIFESTS = \
   icons/arrow-left-100.png \
   icons/arrow-right-100.png \
   icons/upload-100.png \
-  images/delete-adapter-screen.png \
-  images/delete-lens-screen.png \
   images/lightroom-example.png \
   images/main-screen.png \
   images/more-screen.png \
   images/sync-screen.png \
-  images/register-adapter-screen-example.png \
-  images/register-adapter-screen.png \
-  images/register-lens-screen-example-canon-new-fd50mm.png \
-  images/register-lens-screen-example-canon-new-fd35-105mm.png \
-  images/register-lens-screen-example-voightlaender-42.5mm.png \
-  images/register-lens-screen.png
+  images/add-adapter-screen-example.png \
+  images/add-adapter-screen.png \
+  images/add-lens-screen-example-canon-new-fd50mm.png \
+  images/add-lens-screen-example-canon-new-fd35-105mm.png \
+  images/add-lens-screen-example-voigtlaender-42.5mm.png \
+  images/add-lens-screen.png
 INSTALLS  = $(MANIFESTS) .htaccess app.manifest
 CLEANS    = .htaccess app.manifest index.html about.html add.html faq.html help.html manual.html news.html FILES
 

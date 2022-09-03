@@ -13,7 +13,7 @@ development.html
 faq.html
 # MD5 (help.html) = 33362d6562ef474641059bbcaec32dab
 help.html
-# MD5 (manual.html) = 54aa759d4d7af260562b80de317cab20
+# MD5 (manual.html) = 3c0f779e0541b6761700571b8a2a0c4e
 manual.html
 # MD5 (news.html) = c2f789e40a5661a4372babaefd32b7a6
 news.html
@@ -35,27 +35,23 @@ icons/arrow-left-100.png
 icons/arrow-right-100.png
 # MD5 (icons/upload-100.png) = 62de23c68b5ec2eb8afa407a01e58578
 icons/upload-100.png
-# MD5 (images/delete-adapter-screen.png) = 74c39ad3ccb896cbd76d0e1bd7bde75a
-images/delete-adapter-screen.png
-# MD5 (images/delete-lens-screen.png) = 984fe6bfb6b98650e42c2979fbe60778
-images/delete-lens-screen.png
 # MD5 (images/lightroom-example.png) = 8e8e3653612fe544371109f0fd1ebe75
 images/lightroom-example.png
-# MD5 (images/main-screen.png) = 76bc0a7dbee851833ae48745ea606dd2
+# MD5 (images/main-screen.png) = 631c82a6d247be871f9e4d202aaa4977
 images/main-screen.png
-# MD5 (images/more-screen.png) = 6f7fe0bc90fedab5b99fcb9e90529ef2
+# MD5 (images/more-screen.png) = b8d468116a9d1272f61501e309ab9dbb
 images/more-screen.png
-# MD5 (images/sync-screen.png) = adff8a3cc84db2b9bfe4f7e229c29497
+# MD5 (images/sync-screen.png) = 57a93609f189fdbcbb4fc68901b6583e
 images/sync-screen.png
-# MD5 (images/register-adapter-screen-example.png) = 1fc4456adfc37f04792eca11c8d909c5
-images/register-adapter-screen-example.png
-# MD5 (images/register-adapter-screen.png) = d455cf182d11a9d3a964a64e303af5a9
-images/register-adapter-screen.png
-# MD5 (images/register-lens-screen-example-canon-new-fd50mm.png) = 3404f29d2fd92d43eca7c93e75dd4817
-images/register-lens-screen-example-canon-new-fd50mm.png
-# MD5 (images/register-lens-screen-example-canon-new-fd35-105mm.png) = f70214c7f707cf8d1f5395f4fb734f2f
-images/register-lens-screen-example-canon-new-fd35-105mm.png
-# MD5 (images/register-lens-screen-example-voightlaender-42.5mm.png) = 4250120a911fcaf08eac26fda966f1fa
-images/register-lens-screen-example-voightlaender-42.5mm.png
-# MD5 (images/register-lens-screen.png) = 29c44cadb101a1226a1e5db93d775ab3
-images/register-lens-screen.png
+# MD5 (images/add-adapter-screen-example.png) = 8cda8ff984d6f00be6c82c2f387d0962
+images/add-adapter-screen-example.png
+# MD5 (images/add-adapter-screen.png) = 1fe627b1995349a6b8536d6cb856961a
+images/add-adapter-screen.png
+# MD5 (images/add-lens-screen-example-canon-new-fd50mm.png) = b72121227c5cbbe763757072ef7e70a0
+images/add-lens-screen-example-canon-new-fd50mm.png
+# MD5 (images/add-lens-screen-example-canon-new-fd35-105mm.png) = cd78b77be0214cb0954c1708cba885a0
+images/add-lens-screen-example-canon-new-fd35-105mm.png
+# MD5 (images/add-lens-screen-example-voigtlaender-42.5mm.png) = 614b9d5749dc8cd95db8a406fb9e9085
+images/add-lens-screen-example-voigtlaender-42.5mm.png
+# MD5 (images/add-lens-screen.png) = 4b605dcff050ec3af55e7e828ac606be
+images/add-lens-screen.png
