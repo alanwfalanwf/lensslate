@@ -58,13 +58,6 @@ open it and the network is available.
 
   You can delete Lens Slate from your device exactly as you would any other app. 
   
-* On iOS, touch and hold the app icon on your Home screen until the icons jiggle and then tap the x to delete the app. Then press the Home button.
-
-* On Android, either:
-
-  * Open the Settings app. Tap Apps or Application manager. Tap Lens Slate. Tap Uninstall.
-  * Long press on the app icon on the Home screen and then drag to "Remove" or "Uninstall".
-  
 <hr/>
 
 <a name="how-support"></a>
