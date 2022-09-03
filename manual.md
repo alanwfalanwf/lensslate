@@ -209,8 +209,9 @@ On the main screen, select the lens model, focal length, focal ratio (ƒ-number)
 Once you've set the lens configuration, take a
 screenshot:
 
-* On iOS, you press the Home and Sleep/Wake buttons simultaneously.
-* On Android, you press and hold the Volume Down and Power buttons simultaneously.
+* On iOS devices with Touch ID, you press the side and home buttons simultaneously.
+* On iOS devices with Face ID, you press the side and volume up buttons simultaneously.
+* On Android devices, you press and hold the volume down and power buttons simultaneously.
 
 The screenshot will be saved in the camera roll on your device.
 

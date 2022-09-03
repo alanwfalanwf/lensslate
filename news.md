@@ -7,6 +7,10 @@
 2022 September 3:
 
   * Version 4.4:
+  
+    * Updated the documentation.
+  
+    * Return to using "Add" instead of "Register"
     
     * Fixed the blue text and outlines that have appeared on iOS.
 
