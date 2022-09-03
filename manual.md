@@ -64,7 +64,7 @@ lens configuration screenshots will be interspersed with your photos:
 You can now match the lens configuration to your photos.
 
 If you want to take this a step further, you can write the lens configuration to the image files using, for
-example, [exiftool](http://owl.phy.queensu.ca/~phil/exiftool/) or the [Lens Tagger plugin](http://www.essl.de/wp/software/lenstagger-lightroom-plugin/) for Lightroom.
+example, [exiftool](https://exiftool.org/) or the [Lens Tagger plugin](https://www.lenstagger.com/) for Lightroom.
 
 <hr/>
 
@@ -127,7 +127,7 @@ Here is a screen for a [Canon New FD35-105mm ƒ/3.5-4.5](http://global.canon/en/
 
   <a href="images/add-lens-screen-example-canon-new-fd35-105mm.png"><img class="center" src="images/add-lens-screen-example-canon-new-fd35-105mm.png"/></a>
 
-Finally, here is a screen for a [Voitländer Nokton 42.5mm ƒ/0.95](https://voigtlaender.com/42%2c5-mm--f-0%2c95-nokton.html) prime lens:
+Finally, here is a screen for a [Voitländer Nokton 42.5mm ƒ/0.95](https://www.voigtlaender.de/lenses/mft/425-mm-10-95-nokton/?lang=en) prime lens:
 
   <a href="images/add-lens-screen-example-voigtlaender-42.5mm.png"><img class="center" src="images/add-lens-screen-example-voigtlaender-42.5mm.png"/></a>
 
@@ -140,7 +140,7 @@ If you later notice a mistake, you can [edit](#editing) or [delete](#deleting) a
 <a name="adding-adapters"></a>
 ### Adding Adapters
 
-Mirrorless cameras with short [flange focal distances](https://en.wikipedia.org/wiki/Flange_focal_distance) make it relatively easy to [adapt  lenses](https://www.dpreview.com/articles/4950002482/new-dpr-forum-adapted-lens-talk) from other mounts. Adapters include simple mechanical adapters, electronic adapters giving aperture control and auto-focus, and optical focal reducers. Lens Slate helps you keep track of the adapter used with a particular lens.
+Mirrorless cameras with short [flange focal distances](https://en.wikipedia.org/wiki/Flange_focal_distance) make it relatively easy to [adapt  lenses](https://www.dpreview.com/forums/1065) from other mounts. Adapters include simple mechanical adapters, electronic adapters giving aperture control and auto-focus, and optical focal reducers. Lens Slate helps you keep track of the adapter used with a particular lens.
 
 To add an adapter, tap "More" on the main screen and then "Add Adapter". You will be presented with a screen like this one:
 
@@ -251,7 +251,7 @@ lens configuration screenshots will be interspersed with your photos:
 You can now match the lens configuration to your the photos.
 
 If you want to take this a step further, you can write the lens configuration to the image file using, for
-example, [exiftool](http://owl.phy.queensu.ca/~phil/exiftool/) or the [Lens Tagger plugin](http://www.essl.de/wp/software/lenstagger-lightroom-plugin/) for Lightroom.
+example, [exiftool](https://exiftool.org/) or the [Lens Tagger plugin](https://www.lenstagger.com/) for Lightroom.
 
 <hr/>
 

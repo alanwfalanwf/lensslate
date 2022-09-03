@@ -56,7 +56,7 @@ configuration screenshots will be interspersed with your photos:
 You can now match the lens configuration to your photos.
 
 If you want to take this a step further, you can then add the lens configuration to your photos using, for
-example, [exiftool](http://owl.phy.queensu.ca/~phil/exiftool/) or the [Lens Tagger plugin](http://www.essl.de/wp/software/lenstagger-lightroom-plugin/) for Lightroom.
+example, [exiftool](https://exiftool.org/) or the [Lens Tagger plugin](https://www.lenstagger.com/) for Lightroom.
 
 <hr/>
 
