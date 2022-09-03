@@ -11,7 +11,7 @@ MANIFESTS = \
   app.html \
   app.css \
   app.js \
-  jquery-3.1.0.min.js \
+  jquery-3.6.1.min.js \
   style.css \
   icon.png \
   icons/arrow-left-100.png \

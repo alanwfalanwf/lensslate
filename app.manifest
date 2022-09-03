@@ -17,14 +17,14 @@ help.html
 manual.html
 # MD5 (news.html) = 48d1a72d1913a16939fefb3dbc513419
 news.html
-# MD5 (app.html) = 8bda457daa2688e30986e3654fa12575
+# MD5 (app.html) = 96e96dc8db416f7196b5b97a0f3c5bf8
 app.html
 # MD5 (app.css) = 43e67651f981229b7e20295e461aaa6f
 app.css
 # MD5 (app.js) = b3daa120fb67114e7dddb23843e4d045
 app.js
-# MD5 (jquery-3.1.0.min.js) = 05e51b1db558320f1939f9789ccf5c8f
-jquery-3.1.0.min.js
+# MD5 (jquery-3.6.1.min.js) = 00727d1d5d9c90f7de826f1a4a9cc632
+jquery-3.6.1.min.js
 # MD5 (style.css) = cadfd6a05a6ed57c526e62e8ed7a97d4
 style.css
 # MD5 (icon.png) = b5cfa63eedd3b968a3d26c59ea7401d6
