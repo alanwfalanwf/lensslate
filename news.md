@@ -4,6 +4,12 @@
 
 <hr/>
 
+2022 September 3:
+
+  * Version 4.4:
+    
+    * Fixed the blue text and outlines that have appeared on iOS.
+
 2018 April 4:
 
  * Version 4.3: Converted to HTTPS since Chrome now complains about web apps served using HTTP.

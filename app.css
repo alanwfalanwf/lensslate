@@ -44,6 +44,8 @@ select, button, a.button, input, textarea {
   border: 0.625vw solid black;
   border-radius: 0vw;
   background-color: white;
+  color: black;
+  outline: none;
 }
 
 h2, span {

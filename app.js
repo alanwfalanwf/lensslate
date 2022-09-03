@@ -24,7 +24,7 @@
 // When you change the version here, make sure you also change it in the 
 // About page in app.html.
 
-var version = "4.3";
+var version = "4.4";
 
 ////////////////////////////////////////////////////////////////////////////////
 
