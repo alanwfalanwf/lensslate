@@ -155,4 +155,4 @@ It is possible for a web app to generate a screenshot, but a web app can't save 
   
 <hr/>
 
-© 2016, 2018 [Alan WF](https://alanwf.org/)
+© 2016, 2018 [Alan WF](https://alanwf.com/)
