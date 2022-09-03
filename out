@@ -1,0 +1,22 @@
+JavaScript Lint 0.3.0 (JavaScript-C 1.5 2004-09-24)
+Developed by Matthias Miller (http://www.JavaScriptLint.com)
+
+app.js
+/Users/Alan/Documents/EagleFiler/Photography/Files/Lens Slate/src/trunk/app.js(40): lint warning: missing semicolon
+      } else {
+......^
+
+/Users/Alan/Documents/EagleFiler/Photography/Files/Lens Slate/src/trunk/app.js(1254): warning: function focalRatioList does not always return a value
+}
+^
+
+/Users/Alan/Documents/EagleFiler/Photography/Files/Lens Slate/src/trunk/app.js(1278): lint warning: regular expressions should be preceded by a left parenthesis, assignment, colon, or comma
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+.........^
+
+/Users/Alan/Documents/EagleFiler/Photography/Files/Lens Slate/src/trunk/app.js(1282): lint warning: regular expressions should be preceded by a left parenthesis, assignment, colon, or comma
+  return /Android/i.test(navigator.userAgent);
+.........^
+
+
+0 error(s), 4 warning(s)

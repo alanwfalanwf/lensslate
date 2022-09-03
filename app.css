@@ -1,0 +1,236 @@
+@charset "utf-8";
+
+/******************************************************************************/
+
+/*
+// Copyright © 2016 Alan WF
+// 
+// alanwf@alanwf.com
+//
+// This file is part of Lens Slate.
+// 
+// Lens Slate is free software: you can redistribute it and/or modify it
+// under the terms of the GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// This program is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+*/
+
+/******************************************************************************/
+
+body {
+  width: 95vw;
+  padding: 2.5vw;
+  margin: 0vw;
+}
+
+div.page {
+  display: none;
+}
+
+/******************************************************************************/
+
+select, button, a.button, input, textarea {
+  -webkit-appearance: none;
+  text-decoration: none;
+  margin: 1.25vw;
+  border: 0.625vw solid black;
+  border-radius: 0vw;
+  background-color: white;
+}
+
+h2, span {
+  margin: 1.875vw;
+}
+
+h2, span, select, button, a.button, input, textarea {
+  padding: 1.5625vw;
+}
+
+ul {
+  list-style-type: square;
+}
+
+input[type="radio"] {
+  -webkit-appearance: checkbox;
+  padding: 0vw;
+  margin-top: 2.5vw;
+  margin-left: 1.25vw;
+  margin-right: 0vw;
+  margin-bottom: 0vw;
+  border: none;
+  width: 6.25vw;
+}
+
+hr {
+  height: 0.625vw;
+  background-color: black;
+  margin-top: 1.25vw;
+  margin-left: 0vw;
+  margin-right: 0vw;
+  margin-bottom: 1.25vw;
+  border: none;
+}
+
+a {
+  text-decoration: underline;
+  color: black;
+}
+
+/******************************************************************************/
+
+/* 
+ * Ignore white space between inline-block items in div.line. See 
+ * http://bit.ly/2am2je4.
+ */
+
+div.line {
+  overflow: auto;
+}
+
+span, select, button, a.button, textarea, input {
+  float: left;
+}
+
+/******************************************************************************/
+
+/*
+
+Fonts
+
+*/
+
+body, h2, span, select, button, a, input, textarea {
+  font-family: -apple-system, Verdana, Helvetica, Arial, san-serif;
+  font-size: 4.375vw;
+}
+
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+span.edit, input.edit {
+  font-size: 3.75vw;
+}
+
+span.clock {
+  font-size: 6.25vw;
+}
+
+img.inline {
+  display: inline;
+  margin: 0;
+  height: 3.75vw;
+}
+
+/******************************************************************************/
+
+div.clock {
+  text-align: center;
+  margin: 3.125vw;
+}
+span.clock {
+  float: none;
+}
+
+/******************************************************************************/
+
+a.button {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+select, button, a.button {
+  height: 12.5vw;
+}
+
+select.one {
+  width: 95vw;
+  margin-left: 0vw;
+  margin-right: 0vw;
+}
+select.two {
+  width: 46.25vw;
+}
+
+span.label {
+  margin-bottom: 0vw;
+  margin-top: 0.625vw;
+}
+input.edit {
+  margin-top: 0vw;
+}
+span.narrow {
+  width: 18.75vw;
+}
+span.wide {
+  width: 56.25vw;
+}
+input.wide {
+  width: 67.1875vw;
+}
+input.narrow {
+  width: 29.6875vw;
+}
+
+button, a.button {
+  text-align: center;
+  line-height: 8.125vw;
+}
+button.one, a.one {
+  width: 95vw;
+  margin-left: 0vw;
+  margin-right: 0vw;
+}
+button.two, a.two {
+  width: 46.25vw;
+}
+button.four, a.four {
+  width: 21.875vw;
+}
+
+button.arrow {
+  padding: 0vw;
+  width: 12.5vw;
+}
+img.arrow {
+  width: 11.25vw;
+  height: 11.25vw;
+}
+button.prev-next {
+  width: 65vw;
+}
+textarea {
+  margin-left: 0vw;
+  margin-right: 0vw;
+  text-align: left;
+  width: 90.625vw;
+}
+
+/******************************************************************************/
+
+input.left, select.left, button.left, a.left, span.left {
+  margin-left: 0vw;
+}
+span.left {
+  padding-left: 0vw;
+}
+
+input.right, select.right, button.right, a.right, span.right {
+  margin-right: 0vw;
+  float: right;
+}
+span.right {
+  padding-left: 0vw;
+}
+
+/******************************************************************************/
+

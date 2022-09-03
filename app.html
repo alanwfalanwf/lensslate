@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<!--
+
+// Copyright © 2016, 2018 Alan WF
+// 
+// alanwf@alanwf.com
+//
+// This file is part of Lens Slate.
+// 
+// Lens Slate is free software: you can redistribute it and/or modify it
+// under the terms of the GNU General Public License as published by the
+// Free Software Foundation, either version 3 of the License, or (at your
+// option) any later version.
+// 
+// This program is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+
+-->
+
+<html lang='en' manifest='app.manifest'>
+
+  <head>
+
+    <title>Lens Slate</title>
+
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    
+    <meta name='viewport' content='user-scalable=0, width=device-width, maximum-scale=1'>
+
+    <link rel='stylesheet' type='text/css' href='app.css'/>
+    
+    <link rel='icon' type='image/png' href='icon.png'/>
+
+    <link rel='apple-touch-icon' href='icon.png'/>
+
+    <script type='text/javascript' charset='UTF-8' src='jquery-3.1.0.min.js'></script>
+    <script type='text/javascript' charset='UTF-8' src='app.js'></script>
+
+  </head>
+
+  <body>
+
+    <div class='page' id='main-page'>
+      <div class='line'>
+        <button class='arrow left' onclick='mainPagePrev()'><img src='icons/arrow-left-100.png' class='arrow' id='main-prev-arrow' alt='Left Arrow'/></button>
+        <button class='prev-next'  id='main-prev-next' onclick='mainPageTogglePrevNext()'></button>
+        <button class='arrow right' onclick='mainPageNext()'><img src='icons/arrow-right-100.png' class='arrow' id='main-next-arrow' alt='Right Arrow'/></button>
+      </div>
+      <hr/>
+      <div class='line'>
+        <select class='one' id='main-lens-model' onchange='mainPageChangeLensModel()'></select>
+      </div>
+      <div class='line'>
+        <select class='two left' id='main-focal-length' onchange='mainPageChangeFocalLength()'></select>
+        <select class='two right' id='main-focal-ratio' onchange='mainPageChangeFocalRatio()'></select>
+      </div>
+      <div class='line'>
+        <select class='one' id='main-adapter-model' onchange='mainPageChangeAdapterModel()'></select>
+      </div>
+      <div class='line'>
+        <textarea id='main-notes' rows='6' cols='40' onchange='mainPageChangeNotes()'></textarea>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='mainPageMore()'>More</button>
+        <button class='four' onclick='mainPageSync()'>Sync</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='mainPageAbout()'>About</button>
+      </div>
+    </div>
+    
+    <div class='page' id='sync-page'>
+      <hr/>
+      <h2>Sync</h2>
+      <hr/>
+      <div class='line clock'><span class='clock' id='date'>0000-00-00</span></div>
+      <div class='line clock'><span class='clock' id='time'>00:00:00</span></div>
+      <hr/>
+      <div class='line'>
+        <button class='two left' onclick='syncPageDone()'>Done</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='syncPageAbout()'>About</button>
+      </div>
+    </div>
+    
+    <div class='page' id='more-page'>
+      <hr/>
+      <h2>More</h2>
+      <hr/>
+      <div class='line'><button class='one' onclick='morePageRegisterLens()'>Register Lens</button></div>
+      <div class='line'><button class='one' onclick='morePageEditLens()'>Edit Lens</button></div>
+      <div class='line'><button class='one' onclick='morePageDeleteLens()'>Delete Lens</button></div>
+      <div class='line'><button class='one' onclick='morePageRegisterAdapter()'>Register Adapter</button></div>
+      <div class='line'><button class='one' onclick='morePageEditAdapter()'>Edit Adapter</button></div>
+      <div class='line'><button class='one' onclick='morePageDeleteAdapter()'>Delete Adapter</button></div>
+      <hr/>
+      <div class='line'>
+        <button class='two left' onclick='morePageDone()'>Done</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='morePageAbout()'>About</button>
+      </div>
+    </div>
+    
+    <div class='page' id='register-lens-page'>
+      <hr/>
+      <h2>Register Lens</h2>
+      <hr/>
+      <div class='line'>
+        <span class='label edit left narrow'>Model:</span>
+        <input type='text' class='edit wide right wide' id='register-lens-model'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Min Focal Length (mm):</span>
+        <input type='text' class='edit narrow right' id='register-lens-focal-length-min'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Max Focal Length (mm):</span>
+        <input type='text' class='edit narrow right' id='register-lens-focal-length-max'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Min Focal Ratio:</span>
+        <input type='text' class='edit narrow right' id='register-lens-focal-ratio-min'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Max Focal Ratio:</span>
+        <input type='text' class='edit narrow right' id='register-lens-focal-ratio-max'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Focal Ratio Interval:</span>
+        <input type='radio' name='register-lens-focal-ratio-interval' value='full-stop'/><span class='label edit'>Full Stop</span>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>&nbsp;</span>
+        <input type='radio' name='register-lens-focal-ratio-interval' value='half-stop'/><span class='label edit'>Half Stop</span>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>&nbsp;</span>
+        <input type='radio' name='register-lens-focal-ratio-interval' value='third-stop'/><span class='label edit'>Third Stop</span>
+      </div>
+      <div class='line'>
+        <span class='left label edit wide'>Native or Adapted Lens:</span>
+        <input type='radio' name='register-lens-adapted' value='native'/><span class='label edit'>Native</span>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>&nbsp;</span>
+        <input type='radio' name='register-lens-adapted' value='adapted'/><span class='label edit'>Adapted</span>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='registerLensPageSave()'>Save</button>
+        <button class='four' onclick='registerLensPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='registerLensPageAbout()'>About</button>
+      </div>
+    </div>
+      
+    <div class='page' id='edit-lens-select-page'>
+      <hr/>
+      <h2>Edit Lens</h2>
+      <hr/>
+      <div class='line'>
+        <select class='one' id='edit-lens-select-lens-model' onchange='editLensSelectPageChangeLensModel()'></select>
+      </div>
+      <div class='line'>
+        <button class='four left' onclick='editLensSelectPageEdit()'>Edit</button>
+        <button class='four' onclick='editLensSelectPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='editLensSelectPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='edit-lens-page'>
+      <hr/>
+      <h2>Edit Lens</h2>
+      <hr/>
+      <div class='line'>
+        <span class='label edit left narrow'>Model:</span>
+        <input type='text' class='edit wide right wide' id='edit-lens-model'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Min Focal Length (mm):</span>
+        <input type='text' class='edit narrow right' id='edit-lens-focal-length-min'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Max Focal Length (mm):</span>
+        <input type='text' class='edit narrow right' id='edit-lens-focal-length-max'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Min Focal Ratio:</span>
+        <input type='text' class='edit narrow right' id='edit-lens-focal-ratio-min'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Max Focal Ratio:</span>
+        <input type='text' class='edit narrow right' id='edit-lens-focal-ratio-max'/>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>Focal Ratio Interval:</span>
+        <input type='radio' name='edit-lens-focal-ratio-interval' value='full-stop'/><span class='label edit'>Full Stop</span>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>&nbsp;</span>
+        <input type='radio' name='edit-lens-focal-ratio-interval' value='half-stop'/><span class='label edit'>Half Stop</span>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>&nbsp;</span>
+        <input type='radio' name='edit-lens-focal-ratio-interval' value='third-stop'/><span class='label edit'>Third Stop</span>
+      </div>
+      <div class='line'>
+        <span class='left label edit wide'>Native or Adapted Lens:</span>
+        <input type='radio' name='edit-lens-adapted' value='native'/><span class='label edit'>Native</span>
+      </div>
+      <div class='line'>
+        <span class='label edit left wide'>&nbsp;</span>
+        <input type='radio' name='edit-lens-adapted' value='adapted'/><span class='label edit'>Adapted</span>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='editLensPageSave()'>Save</button>
+        <button class='four' onclick='editLensPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='editLensPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='delete-lens-page'>
+      <hr/>
+      <h2>Delete Lens</h2>
+      <hr/>
+      <div class='line'>
+        <select class='one' id='delete-lens-model'></select>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='deleteLensPageDelete()'>Delete</button>
+        <button class='four' onclick='deleteLensPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='deleteLensPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='register-adapter-page'>
+      <hr/>
+      <h2>Register Adapter</h2>
+      <hr/>
+      <div class='line'>
+        <span class='label edit left narrow'>Model:</span>
+        <input type='text' class='edit wide right wide' id='register-adapter-model'/>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='registerAdapterPageSave()'>Save</button>
+        <button class='four' onclick='registerAdapterPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='registerAdapterPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='edit-adapter-select-page'>
+      <hr/>
+      <h2>Edit Adapter</h2>
+      <hr/>
+      <div class='line'>
+        <select class='one' id='edit-adapter-select-adapter-model' onchange='editAdapterSelectPageChangeAdapterModel()'></select>
+      </div>
+      <div class='line'>
+        <button class='four left' onclick='editAdapterSelectPageEdit()'>Edit</button>
+        <button class='four' onclick='editAdapterSelectPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='editAdapterSelectPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='edit-adapter-page'>
+      <hr/>
+      <h2>Edit Adapter</h2>
+      <hr/>
+      <div class='line'>
+        <span class='label edit left narrow'>Model:</span>
+        <input type='text' class='edit wide right wide' id='edit-adapter-model'/>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='editAdapterPageSave()'>Save</button>
+        <button class='four' onclick='editAdapterPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='editAdapterPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='delete-adapter-page'>
+      <hr/>
+      <h2>Delete Adapter</h2>
+      <hr/>
+      <div class='line'>
+        <select class='one' id='delete-adapter-model'></select>
+      </div>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='deleteAdapterPageDelete()'>Delete</button>
+        <button class='four' onclick='deleteAdapterPageCancel()'>Cancel</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='deleteAdapterPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='install-ios-page'>
+      <hr/>
+      <h2>Installing Lens Slate on iOS</h2>
+      <hr/>
+      <p><a href="index.html">Lens Slate</a> is a free photography app for iOS and Android to help you keep track of the configuration of manual lenses as you shoot.</p>
+      <hr/>
+      <p>To install Lens Slate on iOS, open this page in Safari on your device and then save it to your home screen:</p>
+      <ul>
+        <li>Tap <img src="icons/upload-100.png" class="inline"/>.</li>
+        <li>Tap &#8220;Add to Home Screen&#8221;.</li>
+        <li>Tap &#8220;Add&#8221;.</li>
+      </ul>
+      <p>You can then open Lens Slate from your home screen.</p>
+      <hr/>
+      <div class='line'>
+        <a class='button two left' href='help.html'>Help</a>
+        <button class='two right' onclick='installiOSPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='install-android-page'>
+      <hr/>
+      <h2>Installing Lens Slate on Android</h2>
+      <hr/>
+      <p><a href="index.html">Lens Slate</a> is a free photography app for iOS and Android to help you keep track of the configuration of manual lenses as you shoot.</p>
+      <hr/>
+      <p>To install Lens Slate on Android, open this page in Chrome on your device and then save it to your home screen:</p>
+      <ul>
+        <li>Tap the menu button.</li>
+        <li>Tap "Add to Home Page".</li>
+        <li>Tap "Add".</li>
+      </ul>
+      <p>You can then open Lens Slate from your home screen.</p>
+      <hr/>
+      <div class='line'>
+        <a class='button two left' href='help.html'>Help</a>
+        <button class='two right' onclick='installAndroidPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='install-other-page'>
+      <hr/>
+      <h2>Installing Lens Slate</h2>
+      <hr/>
+      <p><a href="index.html">Lens Slate</a> is a free photography app for iOS and Android to help you keep track of the configuration of manual lenses as you shoot.</p>
+      <hr/>
+      <p>To install Lens Slate, open this page on your device in
+      <ul>
+        <li>Safari on iOS or</li>
+        <li>Chrome on Android</li>
+      </ul>
+      and then follow the instructions.</p>
+      <hr/>
+      <div class='line'>
+        <a class='button two left' href='help.html'>Help</a>
+        <button class='two right' onclick='installOtherPageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='welcome-page'>
+      <hr/>
+      <h2>Welcome</h2>
+      <hr/>
+      <p>Welcome to Lens Slate!</p>
+      <p>The first thing you might want to do is register some lenses and adapters by tapping &#8220;More&#8221; below.</p>
+      <p>The next thing you might want to do is synchronize the clock on your camera by tapping &#8220;Sync&#8221; below.</p>
+      <p>For more information, tap on &#8220;Help&#8221; below.</p>
+      <hr/>
+      <div class='line'>
+        <button class='four left' onclick='welcomePageMore()'>More</button>
+        <button class='four' onclick='welcomePageSync()'>Sync</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='welcomePageAbout()'>About</button>
+      </div>
+    </div>
+
+    <div class='page' id='about-page'>
+      <hr/>
+      <h2>About</h2>
+      <hr/>
+      <p><a href="index.html">Lens Slate</a> is a free photography app for iOS and Android to help you keep track of the configuration of manual lenses as you shoot.</p>
+      <hr/>
+      <p>This is version 4.3 (2018-04-04) of Lens Slate.</p>
+      <hr/>
+      <p><a href="index.html">Lens Slate</a> was written by <a href="https://alanwf.org">Alan WF</a>.</p>
+      <p>Some icons are from <a href="http://icons8.com/">icons8</a> and are used with permission.</p>
+      </ul>
+      <hr/>
+      <div class='line'>
+        <button class='two left' onclick='aboutPageDone()'>Done</button>
+        <a class='button four' href='help.html'>Help</a>
+        <button class='four right' onclick='aboutPageAbout()'>About</button>
+      </div>
+    </div>
+
+  </body>
+
+</html>

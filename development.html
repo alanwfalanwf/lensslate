@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="icon" type="image/png" href="icon.png"/><meta name=viewport content="width=device-width, initial-scale=1"/>
+<title>
+Development Notes
+</title>
+</head>
+<body>
+<div id="header">
+<p>Lens Slate:
+<a href="index.html">Home</a> | 
+<a href="news.html">News</a> |
+<a href="help.html">Help</a></p>
+<hr/>
+<h1>Development Notes</h1>
+<hr/>
+</div>
+<div id="main">
+<h2>License</h2>
+
+<p>Lens Slate is under the <a href="COPYING.txt">GPLv3</a>.</p>
+
+<h2>Why is there no startup image?</h2>
+
+<p>Startup images are documented in Apple&#8217;s <a href="https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW6">documentation for web apps on iOS</a>. This documentation is out of date as it only accounts for the original iPhone with a 320 × 480 screen resolution. Supporting newer iPhones with different screen resolutions <a href="https://gist.github.com/tfausak/2222823">requires multiple images</a>. Furthermore, startup images apparently <a href="https://forums.developer.apple.com/thread/23924">do not work in the iOS 9</a>.</p>
+
+<p>On iOS at least, in the absence of a startup image, the app starts with a blank white screen, which is actually a quite good match to the app&#8217;s other screens.</p>
+
+<p>The app also starts quite quickly.</p>
+
+<p>Given these considerations, I have decided that at this moment there is no need for a startup image. </p>
+</div>
+<div id="footer">
+<hr/>
+
+</div>
+</body>
+</html>

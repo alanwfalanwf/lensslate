@@ -1,0 +1,75 @@
+#!/bin/sh
+
+toolsdir=$(dirname "$0")
+markdown="$toolsdir/Markdown.pl"
+smartypants="$toolsdir/SmartyPants.pl"
+
+for infile in "$@"
+do
+
+  outfile=$(dirname "$infile")/$(basename "$infile" .md).html
+  rm -f "$outfile"
+  exec >"$outfile"
+  
+  echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
+
+  echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">'
+
+  echo '<head>'
+  
+  echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>'
+  
+  (
+    cd "$(dirname "$infile")"
+    for file in style.css ../style.css ../../style.css
+    do
+      if test -f "$file"
+      then
+        echo '<link rel="stylesheet" href="'"$file"'" type="text/css"/>'
+      fi
+    done
+    for file in *.head ../*.head ../../*.head
+    do
+      if test -f "$file"
+      then
+        cat $file
+      fi
+    done
+  )
+  
+  echo '<title>'
+  sed -n 's/^#  *//p' "$infile"
+  echo '</title>'
+  
+  echo '</head>'
+
+  echo '<body>'
+  
+  echo '<div id="header">'
+  if test -f HEADER.md
+  then
+    perl "$markdown" HEADER.md | perl "$smartypants"
+  fi
+  echo '<hr/>'
+  sed -n '/^# /p' "$infile" | perl "$markdown" - | perl "$smartypants"
+  echo '<hr/>'
+  echo '</div>'
+
+  echo '<div id="main">'
+  sed -n '/^# /!p' "$infile" | perl "$markdown" - | perl "$smartypants"
+  echo '</div>'
+  
+  echo '<div id="footer">'
+  echo '<hr/>'
+  if test -f FOOTER.md
+  then
+    perl "$markdown" FOOTER.md | perl "$smartypants"
+  fi
+  echo '</div>'
+  
+  echo '</body>'
+
+  echo '</html>'
+
+done
+  

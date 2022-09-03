@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo "CACHE MANIFEST"
+for file in "$@"
+do
+  if test -d "$file"
+  then
+    find "$file" -type f 
+  else
+    echo "$file"
+  fi
+done |
+while read file
+do
+  echo "# $(md5 $file)"
+  echo $file
+done
