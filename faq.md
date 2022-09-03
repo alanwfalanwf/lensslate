@@ -71,7 +71,7 @@ open it and the network is available.
 
 ## How can I get support for Lens Slate?
 
-  You can send email to [lensslate@gmail.com](mailto:lensslate@gmail.com).
+  You can send email to [lensslate@alanwf.com](mailto:lensslate@alanwf.com).
   
 <hr/>
 
@@ -151,8 +151,9 @@ The first part -- writing the data base on your device -- is easy. The rest of i
 
 To take a screenshot and save it in the camera role on your device:
 
-* On iOS, you press the Home and Sleep/Wake buttons simultaneously.
-* On Android, you press and hold the Volume Down and Power buttons simultaneously.
+* On iOS devices with Touch ID, you press the side and home buttons simultaneously.
+* On iOS devices with Face ID, you press the side and volume up buttons simultaneously.
+* On Android devices, you press and hold the volume down and power buttons simultaneously.
 
 I agree that these can be awkward and it could be more convenient if Lens Slate had a button to take a screenshot.
 

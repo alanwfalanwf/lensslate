@@ -7,7 +7,7 @@
 * [News](news.html)
 * [Manual](manual.html)
 * [FAQ](faq.html)
-* Support Email: [lensslate@gmail.com](mailto:lensslate@gmail.com).
+* Support Email: [lensslate@alanwf.com](mailto:lensslate@alanwf.com).
 
 <hr/>
 

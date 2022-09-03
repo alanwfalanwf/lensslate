@@ -47,8 +47,9 @@ You end up with a screen that looks something like this:
 After setting the configuration, you take a
 screenshot:
 
-* On iOS, you press the Home and Sleep/Wake buttons simultaneously.
-* On Android, you press and hold the Volume Down and Power buttons simultaneously.
+* On iOS devices with Touch ID, you press the side and home buttons simultaneously.
+* On iOS devices with Face ID, you press the side and volume up buttons simultaneously.
+* On Android devices, you press and hold the volume down and power buttons simultaneously.
 
 The screenshot will be saved in the camera roll on your device.
 
@@ -260,7 +261,7 @@ example, [exiftool](https://exiftool.org/) or the [Lens Tagger plugin](https://w
 ## Support
 
 If you've run across a problem or have a suggestion, please send email to
-[lensslate@gmail.com](mailto:lensslate@gmail.com).
+[lensslate@alanwf.com](mailto:lensslate@alanwf.com).
 
 
 <hr/>
