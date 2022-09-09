@@ -21,12 +21,9 @@ do
   
   (
     cd "$(dirname "$infile")"
-    for file in style.css ../style.css ../../style.css
+    for file in ../../style.css ../style.css style.css
     do
-      if test -f "$file"
-      then
-        echo '<link rel="stylesheet" href="'"$file"'" type="text/css"/>'
-      fi
+      echo '<link rel="stylesheet" href="'"$file"'" type="text/css"/>'
     done
     for file in *.head ../*.head ../../*.head
     do
