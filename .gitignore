@@ -1,4 +1,9 @@
-
 .DS_Store
-*.html
+add.html
+development.html
+faq.html
+help.html
+index.html
+manual.html
+news.html
 app.manifest
